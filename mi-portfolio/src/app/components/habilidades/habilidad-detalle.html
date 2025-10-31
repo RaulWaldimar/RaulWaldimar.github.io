@@ -1,0 +1,18 @@
+<div class="habilidad-card" [class.destacado]="habilidad.destacada">
+  <h3>{{ habilidad.nombre }}</h3>
+  <p>{{ habilidad.descripcion }}</p>
+  
+  <div class="progress-bar" aria-hidden="true">
+    <div class="progress" [style.width.%]="habilidad.nivel">
+      <span class="progress-text">{{ habilidad.nivel }}%</span>
+    </div>
+  </div>
+
+  <div class="skill-actions">
+    <button type="button" (click)="onToggleDestacada()" [attr.aria-pressed]="habilidad.destacada">
+      {{ habilidad.destacada ? 'Quitar destacada' : 'Destacar' }}
+    </button>
+    <button type="button" (click)="onNivelCambio(-5)" [disabled]="habilidad.nivel <= 0" aria-label="Disminuir nivel">-</button>
+    <button type="button" (click)="onNivelCambio(5)" [disabled]="habilidad.nivel >= 100" aria-label="Aumentar nivel">+</button>
+  </div>
+</div>

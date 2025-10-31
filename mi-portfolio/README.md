@@ -1,3 +1,42 @@
+# mi-portfolio — despliegue a Firebase Hosting
+
+Este repositorio contiene una aplicación Angular que se compila en la carpeta `dist/mi-portfolio`.
+
+Pasos rápidos para desplegar en Firebase Hosting (Windows PowerShell):
+
+1. Construir la app en modo producción:
+
+```powershell
+npm run build --if-present
+```
+
+2. Instalar Firebase CLI (si no está instalado):
+
+```powershell
+npm install -g firebase-tools
+```
+
+3. Iniciar sesión y configurar el proyecto (haz esto una sola vez):
+
+```powershell
+firebase login
+# Después ejecuta (interactivo) para inicializar hosting y elegir tu proyecto existente o crear uno nuevo:
+firebase init hosting
+# Cuando se te pida el 'public directory', escribe: dist/mi-portfolio
+# Elige 'Yes' para SPA (rewrite all urls to /index.html)
+```
+
+4. Desplegar a Firebase Hosting:
+
+```powershell
+firebase deploy --only hosting
+```
+
+Notas:
+- `firebase.json` ya está presente y apunta a `dist/mi-portfolio`.
+- Si no quieres usar Firebase CLI interactivo, puedes crear un archivo `.firebaserc` con el `projectId` de tu proyecto y luego ejecutar `firebase deploy --only hosting`.
+
+Si quieres, puedo crear el archivo `.firebaserc` si me das el `projectId` de tu proyecto Firebase, o puedo ejecutar e intentarlo por ti si me autorizas a proceder con más cambios.
 # MiPortfolio
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.7.

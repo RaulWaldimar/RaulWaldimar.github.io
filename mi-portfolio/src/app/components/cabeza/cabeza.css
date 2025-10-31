@@ -1,0 +1,52 @@
+header {
+  background: linear-gradient(90deg, var(--card), var(--bg-dark));
+  color: var(--text-primary);
+  padding: 1rem 0;
+  text-align: center;
+  border-radius: 0 0 12px 12px;
+  border-bottom: 1px solid var(--accent1);
+  box-shadow: 0 0 20px var(--accent1);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-family: 'Orbitron', sans-serif;
+  color: var(--accent2);
+  text-shadow: 0 0 15px var(--accent2);
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+nav ul li a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+}
+
+nav ul li a:hover {
+  color: var(--accent1);
+  transform: translateY(-2px);
+  text-shadow: 0 0 10px var(--accent1);
+  border-color: var(--accent1);
+  box-shadow: 0 0 15px var(--accent1);
+}
+
+nav ul li a.activo {
+  color: var(--accent2);
+  background: var(--card);
+  border: 1px solid var(--accent2);
+  box-shadow: 0 0 15px var(--accent2);
+  text-shadow: 0 0 10px var(--accent2);
+}

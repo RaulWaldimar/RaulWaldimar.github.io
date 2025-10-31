@@ -1,1 +1,71 @@
-/* You can add global styles to this file, and also import other style files */
+/* Tema global para la versión Angular: paleta tecnológica (coincide con root style.css)
+	 Mantener variables aquí para asegurar que la app Angular use la misma paleta.
+*/
+:root{
+  /* Neon Cyber Dark Theme */
+  --bg: #0A0F24;          /* Fondo principal - Azul oscuro */
+  --card: #121C3B;        /* Tarjetas/paneles - Gris azulado oscuro */
+  --accent1: #00FFFF;     /* Bordes/acentos - Azul neón */
+  --accent2: #00FF99;     /* Títulos - Verde neón */
+  --text: #E6E6E6;        /* Texto normal - Blanco suave */
+  --text-secondary: #A0AEC0; /* Texto secundario - Gris medio */
+  --btn-primary: #1E90FF;   /* Botones principales - Azul brillante */
+  --btn-hover: #00BFFF;     /* Botones hover - Azul cielo */
+  --success: #7CFC00;       /* Éxito/activo - Verde lima */
+  --warning: #FFD700;       /* Advertencia - Amarillo neón */
+  --glass: rgba(255,255,255,0.03);
+  --radius: 12px;
+}html, body {
+	height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Exo 2", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, var(--bg) 0%, #060B1A 100%);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}/* Ajustes globales: enlaces y botones */
+a { 
+  color: var(--accent1);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--btn-hover);
+  text-shadow: 0 0 8px var(--accent1);
+}
+
+button, .boton { 
+  background: linear-gradient(90deg, var(--btn-primary), var(--btn-hover));
+  color: var(--text);
+  border: 1px solid var(--accent1);
+  text-shadow: 0 0 5px var(--accent1);
+  transition: all 0.3s ease;
+}
+
+button:hover, .boton:hover {
+  background: linear-gradient(90deg, var(--btn-hover), var(--accent1));
+  box-shadow: 0 0 15px var(--accent1);
+  transform: translateY(-2px);
+}
+
+/* Utilidades comunes */
+.card { 
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 1rem;
+  border: 1px solid var(--accent1);
+  box-shadow: 0 8px 30px rgba(0,255,255,0.1);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 30px rgba(0,255,255,0.2);
+  border-color: var(--accent2);
+}
+
+/* Responsive helper */
+@media (max-width: 800px){
+	main { padding: 12px; }
+}

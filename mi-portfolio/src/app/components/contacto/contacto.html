@@ -1,0 +1,58 @@
+<section class="contacto">
+  <header>
+    <h2>📬 Contáctame</h2>
+    <nav aria-label="Navegación de la sección contacto">
+      <ul>
+        <li><a routerLink="/">Inicio</a></li>
+        <li><a routerLink="/sobre-mi">Sobre mí</a></li>
+        <li><a routerLink="/hobbies">Hobbies</a></li>
+        <li><a routerLink="/contacto" class="activo" aria-current="page">Contacto</a></li>
+        <li><a routerLink="/creditos">Créditos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="form-section">
+      <h3>¡Hablemos! ✉️</h3>
+      <p>
+        Si quieres ponerte en contacto conmigo, puedes llenar el siguiente formulario o seguirme en mis redes sociales.
+      </p>
+
+      <form (ngSubmit)="send()" #f="ngForm" novalidate>
+        <label for="nombre">Nombre:</label>
+        <input id="nombre" name="nombre" type="text" [(ngModel)]="model.nombre" placeholder="Escribe tu nombre" required aria-required="true">
+
+        <label for="email">Correo:</label>
+        <input id="email" name="email" type="email" [(ngModel)]="model.email" placeholder="ejemplo@correo.com" required aria-required="true">
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="5" [(ngModel)]="model.mensaje" placeholder="Escribe tu mensaje aquí..." required aria-required="true"></textarea>
+
+        <button type="submit" [disabled]="!f.form.valid">Enviar 📩</button>
+      </form>
+
+      <div class="feedback" *ngIf="enviado">
+        ✅ Mensaje enviado. ¡Gracias! (simulado)
+      </div>
+    </section>
+
+    <section class="redes-sociales">
+      <h4>🌐 También puedes encontrarme en:</h4>
+      <ul>
+  <li><a href="https://www.facebook.com/tu.usuario" target="_blank" rel="noopener noreferrer" title="Abrir Facebook en una nueva pestaña">📘 Facebook</a></li>
+  <li><a href="https://www.instagram.com/tu.usuario" target="_blank" rel="noopener noreferrer" title="Abrir Instagram en una nueva pestaña">📸 Instagram</a></li>
+  <li><a href="https://www.twitter.com/tu.usuario" target="_blank" rel="noopener noreferrer" title="Abrir Twitter (X) en una nueva pestaña">🐦 Twitter (X)</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <aside>
+    <h4>📌 Nota</h4>
+    <p>La información del formulario es de prueba y no se enviará realmente. Solo es para demostrar funcionalidad.</p>
+  </aside>
+
+  <footer>
+    <p>© 2025 - Raul Waldimar</p>
+  </footer>
+</section>

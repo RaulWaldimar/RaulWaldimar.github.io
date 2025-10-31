@@ -1,0 +1,31 @@
+<section class="habilidades" aria-labelledby="habilidades-title">
+  <h2 id="habilidades-title">🧠 Mis Habilidades</h2>
+  <p>Soy estudiante de Ingeniería de Sistemas y me apasiona aprender sobre tecnología, programación y seguridad informática.</p>
+
+  <!-- Mostrar spinner mientras carga -->
+  <ng-container *ngIf="cargando; else contenido">
+    <app-loading-spinner></app-loading-spinner>
+  </ng-container>
+
+  <ng-template #contenido>
+    <!-- Mostrar error si existe -->
+    <div *ngIf="error; else lista" class="error-mensaje">
+      <p>{{ error }}</p>
+      <button (click)="ngOnInit()">Intentar de nuevo</button>
+    </div>
+
+    <!-- Lista de habilidades -->
+    <ng-template #lista>
+      <div class="habilidades-grid">
+        <app-habilidad-detalle
+          *ngFor="let habilidad of habilidades; let i = index"
+          [habilidad]="habilidad"
+          (toggleDestacada)="toggleDestacada(i)"
+          (nivelCambiado)="actualizarNivel(i, $event)"
+        ></app-habilidad-detalle>
+      </div>
+
+      <p *ngIf="habilidades.length === 0" class="mensaje-vacio">Aún no tienes habilidades registradas 😅</p>
+    </ng-template>
+  </ng-template>
+</section>

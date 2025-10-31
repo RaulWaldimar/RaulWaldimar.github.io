@@ -3,21 +3,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;400;600&display=swap');
 
 :root{
-  --bg:#0b0f14;
-  --card:#0f1620;
-  --muted:#9aa5b1;
-  --accent1:#00ffd5;
-  --accent2:#4ee1ff;
+  /* Paleta tecnológica: azules, cian y verdes suaves */
+  --bg: #071028;           /* fondo principal (azul noche) */
+  --card: #0f2340;         /* tarjetas / paneles */
+  --muted: #9fb0c8;        /* texto secundario */
+  --accent1: #26c6da;      /* cian claro */
+  --accent2: #3f51b5;      /* azul índigo */
+  --accent3: #4caf50;      /* verde tecnológico para acciones */
   --glass: rgba(255,255,255,0.03);
-  --radius:14px;
+  --radius: 12px;
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%}
 body{
   font-family: "Exo 2", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  background: linear-gradient(180deg,#07090b 0%, #08121a 100%);
-  color:#dfe9ee;
+  background: linear-gradient(180deg,var(--bg) 0%, #051028 100%);
+  color: #dbe9f2;
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
   padding:24px;
@@ -41,8 +43,8 @@ nav a{
   transition:all .25s ease;
   font-weight:600;
 }
-nav a:hover{color:var(--accent1);box-shadow:0 4px 18px rgba(0,255,213,0.06);transform:translateY(-3px)}
-nav a.activo{color:var(--accent1);background:linear-gradient(90deg, rgba(78,225,255,0.06), rgba(0,255,213,0.03));}
+nav a:hover{color:var(--accent1);box-shadow:0 6px 24px rgba(63,81,181,0.08);transform:translateY(-3px)}
+nav a.activo{color:#00121a;background:linear-gradient(90deg, rgba(63,81,181,0.12), rgba(38,198,218,0.08));}
 
 /* Main */
 main{display:block;max-width:1100px;margin:0 auto;padding:18px;background:transparent}

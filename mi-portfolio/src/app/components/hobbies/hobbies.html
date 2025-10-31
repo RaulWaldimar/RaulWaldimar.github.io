@@ -1,0 +1,39 @@
+<section class="hobbies" aria-labelledby="hobbies-title">
+  <h2 id="hobbies-title">🎮 Mis Hobbies</h2>
+  <p>Además del estudio, me gusta disfrutar del tiempo libre con actividades que me relajan y motivan.</p>
+
+  <label for="buscar" class="sr-only">Buscar hobbies</label>
+  <input id="buscar" type="text" placeholder="Buscar..." [(ngModel)]="filtro" />
+
+  <div class="hobbies-grid">
+    <div class="hobby-card"
+         *ngFor="let hobby of hobbiesFiltrados; let i = index"
+         [ngClass]="{ 'destacado': i === 0, 'favorito': favoritos.has(hobby.nombre) }"
+         [ngStyle]="{ 'border-color': i % 2 === 0 ? '#4CAF50' : '#2196F3' }">
+      <img [src]="hobby.imagen" [alt]="hobby.nombre">
+      <h3>{{ hobby.icono }} {{ hobby.nombre | capitalizar }}</h3>
+      <p>{{ hobby.descripcion }}</p>
+
+      <div class="acciones">
+        <button type="button" (click)="toggleFavorito(hobby)">
+          {{ favoritos.has(hobby.nombre) ? '💚 Favorito' : '♡ Marcar favorito' }}
+        </button>
+        <button type="button" (click)="mostrarDetalles(hobby)">
+          {{ seleccionado.has(hobby.nombre) ? 'Ocultar detalles' : 'Ver detalles' }}
+        </button>
+      </div>
+
+      <div class="detalles" *ngIf="seleccionado.has(hobby.nombre)">
+        <h4>Detalles</h4>
+        <ul>
+          <li *ngFor="let item of obtenerDetalles(hobby)">
+            <a *ngIf="item.url" [href]="item.url" target="_blank" rel="noopener noreferrer">{{ item.label }}</a>
+            <span *ngIf="!item.url">{{ item.label }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <p *ngIf="hobbies.length === 0" class="mensaje-vacio">Aún no tienes hobbies registrados 😅</p>
+</section>

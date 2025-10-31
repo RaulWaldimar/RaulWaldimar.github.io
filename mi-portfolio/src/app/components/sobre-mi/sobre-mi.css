@@ -1,0 +1,67 @@
+.sobre-mi {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+.sobre-mi header {
+  background: var(--card);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent1);
+  box-shadow: 0 0 15px var(--accent1);
+}
+
+.sobre-mi nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+.sobre-mi nav a {
+  text-decoration: none;
+  color: var(--accent2);
+  text-shadow: 0 0 5px var(--accent2);
+  transition: all 0.3s ease;
+}
+
+.sobre-mi nav a:hover {
+  color: var(--accent1);
+  text-shadow: 0 0 10px var(--accent1);
+}
+
+.sobre-mi nav a.activo {
+  font-weight: bold;
+  color: var(--accent1);
+  text-shadow: 0 0 15px var(--accent1);
+}
+
+.sobre-mi main {
+  margin-top: 1rem;
+}
+
+.sobre-mi .perfil {
+  display: block;
+  width: 180px;
+  border-radius: 50%;
+  margin: 1.5rem auto;
+}
+
+.sobre-mi aside {
+  background: var(--card);
+  padding: 1rem;
+  border-left: 4px solid var(--accent2);
+  margin-top: 2rem;
+  box-shadow: 0 0 15px var(--accent2);
+  color: var(--text-primary);
+}
+
+.sobre-mi footer {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #555;
+}
